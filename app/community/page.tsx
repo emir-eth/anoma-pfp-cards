@@ -123,7 +123,16 @@ export default function CommunityPage() {
               return (
                 <div key={item.id} className="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5">
                   <button className="block w-full" onClick={() => openViewer(item)} onContextMenu={(e) => e.preventDefault()}>
-                    <img src={src} alt={item.username || 'item'} className="w-full aspect-[16/9] object-cover block" draggable={false} />
+                    {/* SABİT ORAN + CONTAIN */}
+                    <div className="aspect-[16/9] bg-black/30">
+                      <img
+                        src={src}
+                        alt={item.username || 'item'}
+                        className="w-full h-full object-contain block"
+                        draggable={false}
+                        loading="lazy"
+                      />
+                    </div>
                   </button>
                   <div className="absolute inset-x-0 bottom-0 bg-black/40 backdrop-blur-sm px-3 py-2 text-xs">
                     <span className="opacity-80">{item.username}</span>
